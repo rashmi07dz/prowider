@@ -3,6 +3,8 @@ import { prisma } from '@/lib/prisma'
 import { allocateProviders } from '@/lib/allocate'
 import { notifyClients } from '@/lib/sse'
 
+export const dynamic = 'force-dynamic'
+
 export async function POST(req: NextRequest) {
   try {
     const { name, phone, city, serviceId, description } = await req.json()
